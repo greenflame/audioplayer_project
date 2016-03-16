@@ -1,41 +1,59 @@
+#include "stm32f10x.h"
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
+#include "stm32f10x_spi.h"
 
 #include "display.h"
 #include "fonts.h"
 
+#define RST GPIO_Pin_0	// Reset
+#define CE  GPIO_Pin_1	// Chip enable
+#define DC  GPIO_Pin_2	// Data/command
+#define DIN GPIO_Pin_7	// MOSI for SPI
+#define CLK GPIO_Pin_5	// Clock for SPI
+
 void display_set_pin(uint16_t pin, char val)
 {
-	if (val) GPIO_SetBits(DISPLAY_PORT, pin);
-	else GPIO_ResetBits(DISPLAY_PORT, pin);
+	if (val) GPIO_SetBits(GPIOA, pin);
+	else GPIO_ResetBits(GPIOA, pin);
 }
 
-void display_gpio_config()
+void display_gpio_spi_config()
 {
-	RCC_APB2PeriphClockCmd(DISPLAY_CLOCK, ENABLE);
+	// Configure GPIO(RST, CE, DC)
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
 
-	GPIO_InitTypeDef gpio_init;
+	GPIO_InitTypeDef gpio_init_struct;
+	gpio_init_struct.GPIO_Pin = RST | CE | DC;
+	gpio_init_struct.GPIO_Speed = GPIO_Speed_50MHz;
+	gpio_init_struct.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_Init(GPIOA, &gpio_init_struct);
 
-	gpio_init.GPIO_Pin = RST | CE | DC | DIN | CLK;
-	gpio_init.GPIO_Speed = GPIO_Speed_10MHz;
-	gpio_init.GPIO_Mode = GPIO_Mode_Out_PP;
+	// Configure SPI(DIN, CLK)
+	gpio_init_struct.GPIO_Pin = DIN | CLK;
+	gpio_init_struct.GPIO_Speed = GPIO_Speed_50MHz;
+	gpio_init_struct.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_Init(GPIOA, &gpio_init_struct);
 
-	GPIO_Init(DISPLAY_PORT, &gpio_init);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
+
+	SPI_InitTypeDef spi_ini_struct;
+	spi_ini_struct.SPI_Direction = SPI_Direction_1Line_Tx;
+	spi_ini_struct.SPI_DataSize = SPI_DataSize_8b;
+	spi_ini_struct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32;
+	spi_ini_struct.SPI_FirstBit = SPI_FirstBit_MSB;
+	spi_ini_struct.SPI_Mode = SPI_Mode_Master;
+	SPI_Init(SPI1, &spi_ini_struct);
+	SPI_Cmd(SPI1, ENABLE);
 }
 
-void display_write_byte(unsigned char dat, char mode)
+void display_write_byte(unsigned char data, char mode)
 {
 	display_set_pin(CE, 0);
 	display_set_pin(DC, mode);
 
-	char i;
-	for(i = 0; i < 8; i++)
-	{
-		display_set_pin(DIN, dat & 0x80);
-		dat = dat << 1;
-		display_set_pin(CLK, 0);
-		display_set_pin(CLK, 1);
-	}
+	SPI_I2S_SendData(SPI1, data);
+	while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
 
 	display_set_pin(CE, 1);
 }
@@ -60,7 +78,7 @@ void display_clear()
 
 void display_init()
 {
-	display_gpio_config();
+	display_gpio_spi_config();
 
 	display_set_pin(RST, 0);
 	int i = 10 * 4000;	// TODO sleep
@@ -95,5 +113,5 @@ void display_write_string(char *s)
 
 void display_test()
 {
-	display_write_string("C++ (pronounced as see plus plus) is a general-purpose programming language.");
+	display_write_string("SPI test!");
 }
