@@ -5,7 +5,6 @@
 #define DISPLAY_HEIGHT	6		// In characters( *8 to convert to pixels)
 
 void display_init(void);
-void display_test(void);	// TODO delete
 
 void display_clear(void);
 void display_set_XY(int x, int y);

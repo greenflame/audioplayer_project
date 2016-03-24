@@ -43,6 +43,10 @@ void display_gpio_spi_config()
 	spi_ini_struct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32;
 	spi_ini_struct.SPI_FirstBit = SPI_FirstBit_MSB;
 	spi_ini_struct.SPI_Mode = SPI_Mode_Master;
+	spi_ini_struct.SPI_CPHA = SPI_CPHA_1Edge;
+	spi_ini_struct.SPI_CPOL = SPI_CPOL_Low;
+	spi_ini_struct.SPI_NSS = SPI_NSS_Soft;
+	spi_ini_struct.SPI_CRCPolynomial = SPI_CRC_Tx;
 	SPI_Init(SPI1, &spi_ini_struct);
 	SPI_Cmd(SPI1, ENABLE);
 }
@@ -109,9 +113,4 @@ void display_write_string(char *s)
 	{
 		display_write_char(*(s++));
 	}
-}
-
-void display_test()
-{
-	display_write_string("SPI test!");
 }
