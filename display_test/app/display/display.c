@@ -12,16 +12,21 @@
 #define DIN GPIO_Pin_7	// MOSI for SPI
 #define CLK GPIO_Pin_5	// Clock for SPI
 
+#define GPIO_DISPLAY					GPIOA
+#define RCC_APB2Periph_GPIO_DISPLAY		RCC_APB2Periph_GPIOA
+#define RCC_APB2Periph_SPI_DISPLAY		RCC_APB2Periph_SPI1
+#define SPI_DISPLAY						SPI1
+
 void display_set_pin(uint16_t pin, char val)
 {
-	if (val) GPIO_SetBits(GPIOA, pin);
-	else GPIO_ResetBits(GPIOA, pin);
+	if (val) GPIO_SetBits(GPIO_DISPLAY, pin);
+	else GPIO_ResetBits(GPIO_DISPLAY, pin);
 }
 
 void display_gpio_spi_config()
 {
 	// Configure GPIO(RST, CE, DC)
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIO_DISPLAY, ENABLE);
 
 	GPIO_InitTypeDef gpio_init_struct;
 	gpio_init_struct.GPIO_Pin = RST | CE | DC;
@@ -35,7 +40,7 @@ void display_gpio_spi_config()
 	gpio_init_struct.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIO_Init(GPIOA, &gpio_init_struct);
 
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI_DISPLAY, ENABLE);
 
 	SPI_InitTypeDef spi_ini_struct;
 	spi_ini_struct.SPI_Direction = SPI_Direction_1Line_Tx;
@@ -57,7 +62,7 @@ void display_write_byte(unsigned char data, char mode)
 	display_set_pin(DC, mode);
 
 	SPI_I2S_SendData(SPI1, data);
-	while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
+	while(SPI_I2S_GetFlagStatus(SPI_DISPLAY, SPI_I2S_FLAG_BSY) == SET);
 
 	display_set_pin(CE, 1);
 }

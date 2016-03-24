@@ -309,9 +309,7 @@ Discarded input sections
                 0x00000000       0x33 ..\obj\stm32f10x_dac.o
  .data          0x00000000        0x0 ..\obj\main.o
  .bss           0x00000000        0x0 ..\obj\main.o
- .data          0x00000000       0x58 ..\obj\fatfs_diskio_sdcard_spi.o
  .bss           0x00000000        0x0 ..\obj\fatfs_diskio_sdcard_spi.o
- .rodata        0x00000000      0x12a ..\obj\fatfs_diskio_sdcard_spi.o
  .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-exit.o)
@@ -375,7 +373,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm
 LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
                 0x20005000                _eram = 0x20005000
 
-.text           0x08000000     0x5fb0
+.text           0x08000000     0x6d94
  *(.isr_vector)
  .isr_vector    0x08000000      0x10c ..\obj\startup_stm32f10x_md.o
                 0x08000000                g_pfnVectors
@@ -550,43 +548,44 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm
                 0x08004aec                display_init
                 0x08004b54                display_write_char
                 0x08004b9c                display_write_string
- .text          0x08004bc4      0x1e0 ..\obj\main.o
+ .text          0x08004bc4      0x138 ..\obj\main.o
                 0x08004bc4                sleep
                 0x08004be4                led_init
                 0x08004c18                led_set
                 0x08004c4c                main
- .text          0x08004da4     0x1090 ..\obj\fatfs_diskio_sdcard_spi.o
-                0x08004f10                crc7
-                0x08004fc4                crc16
-                0x08005b20                hwif_init
-                0x08005b94                sd_read
-                0x08005bec                sd_write
-                0x08005c50                disk_initialize
-                0x08005c78                disk_status
-                0x08005ca0                disk_read
-                0x08005cf8                disk_write
-                0x08005d50                disk_ioctl
-                0x08005db8                get_fattime
-                0x08005e04                ff_convert
-                0x08005e1c                ff_wtoupper
+ .text          0x08004cfc     0x1808 ..\obj\fatfs_diskio_sdcard_spi.o
+                0x08004e64                crc7
+                0x08004f18                crc16
+                0x08004f5c                my_printf
+                0x080061c4                hwif_init
+                0x08006238                sd_read
+                0x080062ac                sd_write
+                0x08006320                disk_initialize
+                0x08006348                disk_status
+                0x08006370                disk_read
+                0x080063c8                disk_write
+                0x08006420                disk_ioctl
+                0x08006488                get_fattime
+                0x080064d4                ff_convert
+                0x080064ec                ff_wtoupper
  .text.startup.register_fini
-                0x08005e34       0x14 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
- .text.atexit   0x08005e48        0xc c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
-                0x08005e48                atexit
+                0x08006504       0x14 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+ .text.atexit   0x08006518        0xc c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
+                0x08006518                atexit
  .text.__libc_fini_array
-                0x08005e54       0x28 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
-                0x08005e54                __libc_fini_array
+                0x08006524       0x28 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
+                0x08006524                __libc_fini_array
  .text.__register_exitproc
-                0x08005e7c       0xa4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
-                0x08005e7c                __register_exitproc
+                0x0800654c       0xa4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
+                0x0800654c                __register_exitproc
  *(.init)
- .init          0x08005f20        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crti.o
-                0x08005f20                _init
- .init          0x08005f24        0x8 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtn.o
+ .init          0x080065f0        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crti.o
+                0x080065f0                _init
+ .init          0x080065f4        0x8 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtn.o
  *(.fini)
- .fini          0x08005f2c        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crti.o
-                0x08005f2c                _fini
- .fini          0x08005f30        0x8 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtn.o
+ .fini          0x080065fc        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crti.o
+                0x080065fc                _fini
+ .fini          0x08006600        0x8 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -598,50 +597,52 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08005f38        0xf ..\obj\ff.o
- *fill*         0x08005f47        0x1 
- .rodata        0x08005f48       0x5d ..\obj\main.o
- *fill*         0x08005fa5        0x3 
+ .rodata        0x08006608        0xf ..\obj\ff.o
+ *fill*         0x08006617        0x1 
+ .rodata        0x08006618       0x3e ..\obj\main.o
+ *fill*         0x08006656        0x2 
+ .rodata        0x08006658      0x731 ..\obj\fatfs_diskio_sdcard_spi.o
+ *fill*         0x08006d89        0x3 
  .rodata.str1.4
-                0x08005fa8        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
+                0x08006d8c        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
                                   0x2 (size before relaxing)
  .rodata._global_impure_ptr
-                0x08005fac        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
-                0x08005fac                _global_impure_ptr
+                0x08006d90        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
+                0x08006d90                _global_impure_ptr
  *(.eh_fram e*)
 
-.eh_frame       0x08005fb0        0x0
- .eh_frame      0x08005fb0        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+.eh_frame       0x08006d94        0x0
+ .eh_frame      0x08006d94        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
 
-.glue_7         0x08005fb0        0x0
- .glue_7        0x08005fb0        0x0 linker stubs
+.glue_7         0x08006d94        0x0
+ .glue_7        0x08006d94        0x0 linker stubs
 
-.glue_7t        0x08005fb0        0x0
- .glue_7t       0x08005fb0        0x0 linker stubs
+.glue_7t        0x08006d94        0x0
+ .glue_7t       0x08006d94        0x0 linker stubs
 
-.vfp11_veneer   0x08005fb0        0x0
- .vfp11_veneer  0x08005fb0        0x0 linker stubs
+.vfp11_veneer   0x08006d94        0x0
+ .vfp11_veneer  0x08006d94        0x0 linker stubs
 
-.v4_bx          0x08005fb0        0x0
- .v4_bx         0x08005fb0        0x0 linker stubs
+.v4_bx          0x08006d94        0x0
+ .v4_bx         0x08006d94        0x0 linker stubs
 
-.iplt           0x08005fb0        0x0
- .iplt          0x08005fb0        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+.iplt           0x08006d94        0x0
+ .iplt          0x08006d94        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
 
-.rel.dyn        0x08005fb0        0x0
- .rel.iplt      0x08005fb0        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+.rel.dyn        0x08006d94        0x0
+ .rel.iplt      0x08006d94        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08005fb0                __exidx_start = .
+                0x08006d94                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08005fb0                __exidx_end = .
-                0x08005fb0                __etext = .
-                0x08005fb0                _sidata = __etext
+                0x08006d94                __exidx_end = .
+                0x08006d94                __etext = .
+                0x08006d94                _sidata = __etext
 
-.data           0x20000000      0x688 load address 0x08005fb0
+.data           0x20000000      0x6e0 load address 0x08006d94
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -652,70 +653,71 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm
                 0x20000018                AHBPrescTable
  .data          0x20000028      0x228 ..\obj\display.o
                 0x20000028                font_6x8
+ .data          0x20000250       0x58 ..\obj\fatfs_diskio_sdcard_spi.o
  .data.impure_data
-                0x20000250      0x428 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
-                0x20000678                . = ALIGN (0x4)
-                0x20000678                PROVIDE (__preinit_array_start, .)
+                0x200002a8      0x428 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
+                0x200006d0                . = ALIGN (0x4)
+                0x200006d0                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x20000678                PROVIDE (__preinit_array_end, .)
-                0x20000678                . = ALIGN (0x4)
-                0x20000678                PROVIDE (__init_array_start, .)
+                0x200006d0                PROVIDE (__preinit_array_end, .)
+                0x200006d0                . = ALIGN (0x4)
+                0x200006d0                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  .init_array.00000
-                0x20000678        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+                0x200006d0        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
  *(.init_array)
- .init_array    0x2000067c        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
-                0x20000680                PROVIDE (__init_array_end, .)
-                0x20000680                . = ALIGN (0x4)
-                0x20000680                PROVIDE (__fini_array_start, .)
+ .init_array    0x200006d4        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+                0x200006d8                PROVIDE (__init_array_end, .)
+                0x200006d8                . = ALIGN (0x4)
+                0x200006d8                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array)
- .fini_array    0x20000680        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
-                0x20000684                PROVIDE (__fini_array_end, .)
+ .fini_array    0x200006d8        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+                0x200006dc                PROVIDE (__fini_array_end, .)
  *(.jcr*)
- .jcr           0x20000684        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
- .jcr           0x20000684        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtend.o
-                0x20000688                . = ALIGN (0x4)
-                0x20000688                __data_end__ = .
-                0x20000688                _edata = __data_end__
+ .jcr           0x200006dc        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+ .jcr           0x200006dc        0x4 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtend.o
+                0x200006e0                . = ALIGN (0x4)
+                0x200006e0                __data_end__ = .
+                0x200006e0                _edata = __data_end__
 
 .tm_clone_table
-                0x20000688        0x0 load address 0x08006638
+                0x200006e0        0x0 load address 0x08007474
  .tm_clone_table
-                0x20000688        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+                0x200006e0        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
  .tm_clone_table
-                0x20000688        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtend.o
+                0x200006e0        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtend.o
 
-.igot.plt       0x20000688        0x0 load address 0x08006638
- .igot.plt      0x20000688        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+.igot.plt       0x200006e0        0x0 load address 0x08007474
+ .igot.plt      0x200006e0        0x0 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
 
-.bss            0x20000688      0x434 load address 0x08006638
-                0x20000688                . = ALIGN (0x4)
-                0x20000688                __bss_start__ = .
-                0x20000688                _sbss = __bss_start__
+.bss            0x200006e0      0x434 load address 0x08007474
+                0x200006e0                . = ALIGN (0x4)
+                0x200006e0                __bss_start__ = .
+                0x200006e0                _sbss = __bss_start__
  *(.bss*)
- .bss           0x20000688       0x1c c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
- .bss           0x200006a4        0x6 ..\obj\ff.o
+ .bss           0x200006e0       0x1c c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7-m/crtbegin.o
+ .bss           0x200006fc        0x6 ..\obj\ff.o
  *(COMMON)
- *fill*         0x200006aa        0x2 
- COMMON         0x200006ac      0x400 ..\obj\main.o
-                0x200006ac                buff
- COMMON         0x20000aac       0x10 ..\obj\fatfs_diskio_sdcard_spi.o
-                0x20000aac                hw
-                0x20000abc                . = ALIGN (0x4)
-                0x20000abc                __bss_end__ = .
-                0x20000abc                _ebss = __bss_end__
+ *fill*         0x20000702        0x2 
+ COMMON         0x20000704      0x400 ..\obj\main.o
+                0x20000704                buff
+ COMMON         0x20000b04       0x10 ..\obj\fatfs_diskio_sdcard_spi.o
+                0x20000b04                hw
+                0x20000b14                . = ALIGN (0x4)
+                0x20000b14                __bss_end__ = .
+                0x20000b14                _ebss = __bss_end__
 
-.heap           0x20000abc        0x0
-                0x20000abc                __end__ = .
-                0x20000abc                _end = __end__
-                0x20000abc                end = __end__
+.heap           0x20000b14        0x0
+                0x20000b14                __end__ = .
+                0x20000b14                _end = __end__
+                0x20000b14                end = __end__
  *(.heap*)
-                0x20000abc                __HeapLimit = .
+                0x20000b14                __HeapLimit = .
 
-.co_stack       0x20000abc        0x4 load address 0x08006a6c
-                0x20000ac0                . = ALIGN (0x8)
- *fill*         0x20000abc        0x4 
+.co_stack       0x20000b14        0x4 load address 0x080078a8
+                0x20000b18                . = ALIGN (0x8)
+ *fill*         0x20000b14        0x4 
  *(.co_stack .co_stack.*)
                 0x20005000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
                 0x20004ffc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
@@ -809,7 +811,7 @@ OUTPUT(display_test.elf elf32-littlearm)
  .comment       0x0000006e       0x6f ..\obj\main.o
  .comment       0x0000006e       0x6f ..\obj\fatfs_diskio_sdcard_spi.o
 
-.debug_info     0x00000000     0x50aa
+.debug_info     0x00000000     0x505f
  .debug_info    0x00000000      0x6f6 ..\obj\stm32f10x_gpio.o
  .debug_info    0x000006f6      0x899 ..\obj\stm32f10x_rcc.o
  .debug_info    0x00000f8f     0x1793 ..\obj\ff.o
@@ -817,8 +819,8 @@ OUTPUT(display_test.elf elf32-littlearm)
  .debug_info    0x00002825      0x47d ..\obj\system_stm32f10x.o
  .debug_info    0x00002ca2      0x8fb ..\obj\stm32f10x_spi.o
  .debug_info    0x0000359d      0x53b ..\obj\display.o
- .debug_info    0x00003ad8      0x661 ..\obj\main.o
- .debug_info    0x00004139      0xf71 ..\obj\fatfs_diskio_sdcard_spi.o
+ .debug_info    0x00003ad8      0x555 ..\obj\main.o
+ .debug_info    0x0000402d     0x1032 ..\obj\fatfs_diskio_sdcard_spi.o
 
 .debug_abbrev   0x00000000      0xe5a
  .debug_abbrev  0x00000000      0x1cc ..\obj\stm32f10x_gpio.o
@@ -828,8 +830,8 @@ OUTPUT(display_test.elf elf32-littlearm)
  .debug_abbrev  0x0000052c      0x14e ..\obj\system_stm32f10x.o
  .debug_abbrev  0x0000067a      0x180 ..\obj\stm32f10x_spi.o
  .debug_abbrev  0x000007fa      0x16b ..\obj\display.o
- .debug_abbrev  0x00000965      0x1bb ..\obj\main.o
- .debug_abbrev  0x00000b20      0x33a ..\obj\fatfs_diskio_sdcard_spi.o
+ .debug_abbrev  0x00000965      0x1b0 ..\obj\main.o
+ .debug_abbrev  0x00000b15      0x345 ..\obj\fatfs_diskio_sdcard_spi.o
 
 .debug_aranges  0x00000000      0x128
  .debug_aranges
@@ -851,7 +853,7 @@ OUTPUT(display_test.elf elf32-littlearm)
  .debug_aranges
                 0x00000108       0x20 ..\obj\fatfs_diskio_sdcard_spi.o
 
-.debug_line     0x00000000     0x2326
+.debug_line     0x00000000     0x2481
  .debug_line    0x00000000      0x312 ..\obj\stm32f10x_gpio.o
  .debug_line    0x00000312      0x35b ..\obj\stm32f10x_rcc.o
  .debug_line    0x0000066d      0xa8e ..\obj\ff.o
@@ -859,10 +861,10 @@ OUTPUT(display_test.elf elf32-littlearm)
  .debug_line    0x000011df      0x27c ..\obj\system_stm32f10x.o
  .debug_line    0x0000145b      0x329 ..\obj\stm32f10x_spi.o
  .debug_line    0x00001784      0x2f3 ..\obj\display.o
- .debug_line    0x00001a77      0x308 ..\obj\main.o
- .debug_line    0x00001d7f      0x5a7 ..\obj\fatfs_diskio_sdcard_spi.o
+ .debug_line    0x00001a77      0x2f9 ..\obj\main.o
+ .debug_line    0x00001d70      0x711 ..\obj\fatfs_diskio_sdcard_spi.o
 
-.debug_str      0x00000000     0x189f
+.debug_str      0x00000000     0x1898
  .debug_str     0x00000000      0x4f9 ..\obj\stm32f10x_gpio.o
                                 0x54f (size before relaxing)
  .debug_str     0x000004f9      0x488 ..\obj\stm32f10x_rcc.o
@@ -875,12 +877,12 @@ OUTPUT(display_test.elf elf32-littlearm)
                                 0x633 (size before relaxing)
  .debug_str     0x000013b2      0x10a ..\obj\display.o
                                 0x4a5 (size before relaxing)
- .debug_str     0x000014bc       0xa0 ..\obj\main.o
-                                0x535 (size before relaxing)
- .debug_str     0x0000155c      0x343 ..\obj\fatfs_diskio_sdcard_spi.o
-                                0x74c (size before relaxing)
+ .debug_str     0x000014bc       0x90 ..\obj\main.o
+                                0x4f2 (size before relaxing)
+ .debug_str     0x0000154c      0x34c ..\obj\fatfs_diskio_sdcard_spi.o
+                                0x755 (size before relaxing)
 
-.debug_frame    0x00000000     0x1a64
+.debug_frame    0x00000000     0x1a94
  .debug_frame   0x00000000      0x2d0 ..\obj\stm32f10x_gpio.o
  .debug_frame   0x000002d0      0x4f4 ..\obj\stm32f10x_rcc.o
  .debug_frame   0x000007c4      0x6d0 ..\obj\ff.o
@@ -888,11 +890,11 @@ OUTPUT(display_test.elf elf32-littlearm)
  .debug_frame   0x00000f2c      0x3a0 ..\obj\stm32f10x_spi.o
  .debug_frame   0x000012cc      0x130 ..\obj\display.o
  .debug_frame   0x000013fc       0xa0 ..\obj\main.o
- .debug_frame   0x0000149c      0x4f0 ..\obj\fatfs_diskio_sdcard_spi.o
- .debug_frame   0x0000198c       0x50 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
- .debug_frame   0x000019dc       0x20 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
- .debug_frame   0x000019fc       0x34 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
- .debug_frame   0x00001a30       0x34 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
+ .debug_frame   0x0000149c      0x520 ..\obj\fatfs_diskio_sdcard_spi.o
+ .debug_frame   0x000019bc       0x50 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00001a0c       0x20 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
+ .debug_frame   0x00001a2c       0x34 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
+ .debug_frame   0x00001a60       0x34 c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
 
 .debug_ranges   0x00000000       0x20
  .debug_ranges  0x00000000       0x20 ..\obj\startup_stm32f10x_md.o

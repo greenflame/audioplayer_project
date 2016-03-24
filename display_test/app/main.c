@@ -28,40 +28,40 @@ void led_set(char c)
 	else GPIO_SetBits(GPIOC, GPIO_Pin_13);
 }
 
-char    buff[1024];             // буфер для чтения/записи
+char buff[1024];
 
 int main(void)
 {
 	led_init();
-
-	FRESULT result;
-    FATFS FATFS_Obj;
-
     display_init();
-	display_write_string("The cake is a lie. ");
+
+    display_write_string("The cake is a lie. ");
 
 
-	result = f_mount(&FATFS_Obj, "0", 1);
+    // mount fs
+    FATFS FATFS_Obj;
+    FRESULT result;
+
+    result = f_mount(&FATFS_Obj, "0", 1);
 
     if (result != FR_OK)
     {
     	display_write_string("Mount error. ");
     }
 
-
-    DIR dir;
-    FILINFO fileInfo;
-    int nFiles = 0;
-
-    result = f_opendir(&dir, "/");
-    if (result == FR_OK)
-    {
-            while (((result = f_readdir(&dir, &fileInfo)) == FR_OK) && fileInfo.fname[0])
-            {
-                    nFiles++;
-            }
-    }
-    f_closedir(&dir);
+//    DIR dir;
+//    FILINFO fileInfo;
+//    int nFiles = 0;
+//
+//    result = f_opendir(&dir, "/");
+//    if (result == FR_OK)
+//    {
+//            while ((f_readdir(&dir, &fileInfo) == FR_OK) && fileInfo.fname[0])
+//            {
+//                    nFiles++;
+//            }
+//    }
+//    f_closedir(&dir);
 
 
     FIL file;
@@ -71,20 +71,19 @@ int main(void)
     if (result == FR_OK)
     {
     	display_write_string("File opened. ");
-            f_read(&file, &buff, 1024, &nRead);
-            f_close(&file);
+		f_read(&file, &buff, 1024, &nRead);
+		f_close(&file);
 
-//            buff[5] = 0;
-            display_write_string(buff);
+		display_write_string(buff);
     }
 
-    result = f_open(&file, "write.txt", FA_CREATE_ALWAYS | FA_WRITE);
-    if (result == FR_OK)
-    {
-    	display_write_string("File write. ");
-            f_write(&file, &buff, nRead, &nWritten);
-            f_close(&file);
-    }
+//    result = f_open(&file, "write.txt", FA_CREATE_NEW | FA_WRITE);
+//    if (result == FR_OK)
+//    {
+//    	display_write_string("File write. ");
+//		f_write(&file, &buff, nRead, &nWritten);
+//		f_close(&file);
+//    }
 
     while(1)
     {

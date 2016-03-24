@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project version="2G - 2.0.3" name="display_test">
   <Target name="display_test" isCurrent="1">
-    <Device manufacturerId="9" manufacturerName="ST" chipId="599" chipName="STM32F103C8T6" boardId="" boardName="" boardUrl="" coreId="3" coreName="Cortex M3"/>
+    <Device manufacturerId="9" manufacturerName="ST" chipId="599" chipName="STM32F103C8T6" boardId="" boardName="" boardUrl="" coreId="" coreName=""/>
     <BuildOption>
       <Compile>
         <Option name="OptimizationLevel" value="0"/>
@@ -66,10 +66,7 @@
     </DebugOption>
     <ExcludeFile/>
   </Target>
-  <Components path="./">
-    <Component id="97" name="cmsis_core" path="" type="BasicComponet"/>
-    <Component id="187" name="STM32F10x_MD_STDLIB" path="" type="BasicComponet"/>
-  </Components>
+  <Components path="./"/>
   <LocalComponents/>
   <Files>
     <File name="components/STM32F10x_MD_STDLIB" path="" type="2"/>
@@ -82,8 +79,8 @@
     <File name="components/cmsis_core/core_cmFunc.h" path="components/coocox-master/cmsis_core/source/core_cmFunc.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/misc.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/misc.h" type="1"/>
     <File name="fatfs" path="" type="2"/>
-    <File name="components/STM32F10x_MD_STDLIB/stm32f10x_gpio.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_gpio.c" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_rtc.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_rtc.h" type="1"/>
+    <File name="components/STM32F10x_MD_STDLIB/stm32f10x_gpio.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_gpio.c" type="1"/>
     <File name="components/cmsis_core/arm_const_structs.h" path="components/coocox-master/cmsis_core/source/arm_const_structs.h" type="1"/>
     <File name="components/cmsis_core/arm_common_tables.h" path="components/coocox-master/cmsis_core/source/arm_common_tables.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_adc.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_adc.h" type="1"/>
@@ -138,8 +135,8 @@
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_crc.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_crc.c" type="1"/>
     <File name="components/cmsis_core/core_cm4.h" path="components/coocox-master/cmsis_core/source/core_cm4.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_exti.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_exti.h" type="1"/>
-    <File name="fatfs/ffconf.h" path="app/fatfs/ffconf.h" type="1"/>
     <File name="components" path="" type="2"/>
+    <File name="fatfs/ffconf.h" path="app/fatfs/ffconf.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_adc.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_adc.c" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_rcc.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_rcc.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_exti.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_exti.c" type="1"/>
