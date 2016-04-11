@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.9.3 mingw32 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -D__FPU_USED -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_lib -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_boot -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\freertos -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_lib\include -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player">
+      <target file="queue.o" lastModified="15406e94a4b">
+         <source file="..\..\..\freertos\queue.c" lastModified="1540562cd48"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="15406e9479d">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="154051e754e"/>
+      </target>
+      <target file="port.o" lastModified="15406e94af7">
+         <source file="..\..\..\freertos\port.c" lastModified="1540562d2b6"/>
+      </target>
+      <target file="timers.o" lastModified="15406e94646">
+         <source file="..\..\..\freertos\timers.c" lastModified="1540562cd77"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="15406e94db5">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15406aacaba"/>
+      </target>
+      <target file="heap_2.o" lastModified="15406e94cda">
+         <source file="..\..\..\freertos\heap_2.c" lastModified="1540562deaa"/>
+      </target>
+      <target file="list.o" lastModified="15406e947eb">
+         <source file="..\..\..\freertos\list.c" lastModified="1540562cd29"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="15406e948c5">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15406d78a9c"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="15406e94250">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="154051e756d"/>
+      </target>
+      <target file="event_groups.o" lastModified="15406e94c3e">
+         <source file="..\..\..\freertos\event_groups.c" lastModified="1540562cd1a"/>
+      </target>
+      <target file="croutine.o" lastModified="15406e94b83">
+         <source file="..\..\..\freertos\croutine.c" lastModified="1540562cd0a"/>
+      </target>
+      <target file="main.o" lastModified="15406e942bd">
+         <source file="..\..\..\main.c" lastModified="15406e087d7"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="15406e94472">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="154051e758c"/>
+      </target>
+      <target file="misc.o" lastModified="15406e94c8c">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15406b68464"/>
+      </target>
+      <target file="tasks.o" lastModified="15406e94730">
+         <source file="..\..\..\freertos\tasks.c" lastModified="1540562cd68"/>
+      </target>
+   </processor>
+</history>
