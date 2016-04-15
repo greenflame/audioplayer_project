@@ -23,7 +23,8 @@ void codec_init()
 	PinInitStruct.GPIO_OType = GPIO_OType_PP;
 	PinInitStruct.GPIO_Speed = GPIO_Speed_50MHz;
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOB, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA| RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOB, ENABLE);
+
 
 	GPIO_Init(GPIOD, &PinInitStruct);
 
@@ -64,7 +65,7 @@ void codec_init()
 
 	// configure I2S port
 	SPI_I2S_DeInit(CODEC_I2S);
-	I2S_InitType.I2S_AudioFreq = I2S_AudioFreq_48k;
+	I2S_InitType.I2S_AudioFreq = I2S_AudioFreq_44k;
 	I2S_InitType.I2S_MCLKOutput = I2S_MCLKOutput_Enable;
 	I2S_InitType.I2S_DataFormat = I2S_DataFormat_16b;
 	I2S_InitType.I2S_Mode = I2S_Mode_MasterTx;
@@ -72,7 +73,7 @@ void codec_init()
 	I2S_InitType.I2S_CPOL = I2S_CPOL_Low;
 
 	I2S_Init(CODEC_I2S, &I2S_InitType);
-	//I2S_Cmd(CODEC_I2S, ENABLE);
+	I2S_Cmd(CODEC_I2S, ENABLE);
 
 
 	// configure I2C port

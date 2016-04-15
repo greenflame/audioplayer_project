@@ -28,7 +28,7 @@ void sleep(int n)
 	while (n > 0) { n--; }
 }
 
-void init_leds()
+void leds_init()
 {
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
 
@@ -42,7 +42,7 @@ void init_leds()
     GPIO_Init(GPIOD, &GPIO_InitDef);
 }
 
-void init_tim(void)
+void timer_init(void)
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
 
@@ -55,7 +55,7 @@ void init_tim(void)
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
-	TIM_TimeBaseStructure.TIM_Period = 1000000 / 441 - 1; // down to 1 Hz
+	TIM_TimeBaseStructure.TIM_Period = 1000000 / 44100 - 1; // down to 1 Hz
 	TIM_TimeBaseStructure.TIM_Prescaler = 360 / 2 / 2 - 1; // down to 1 MHz
 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -65,46 +65,33 @@ void init_tim(void)
 	TIM_Cmd(TIM2, ENABLE);
 }
 
-#define BUFF_SIZE 102400
-FIL file;
-UINT nRead;
-char buff[BUFF_SIZE];
-int ptr = BUFF_SIZE;
-
-void TIM2_IRQHandler(void)
+void i2s_it_init()
 {
-	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+    NVIC_InitTypeDef   NVIC_InitStructure;
 
-	SPI_I2S_SendData(SPI3, 0);
+    NVIC_InitStructure.NVIC_IRQChannel = SPI3_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
 
-//	if (ptr >= BUFF_SIZE)
-//	{
-//		f_read(&file, &buff, BUFF_SIZE, &nRead);
-//		ptr = 0;
-//	}
-//	else
-//	{
-//		SPI_I2S_SendData(SPI3, 0xff);
-		while(!SPI_I2S_GetFlagStatus(SPI3, SPI_I2S_FLAG_TXE));
-//	}
+    SPI_I2S_ITConfig(SPI3, SPI_I2S_IT_TXE, ENABLE);
 }
 
-int main(void)
+#define BUFF_SIZE 10240
+
+int current_data[2];	// Left, right
+int current_side = 0;	// Left, right (0, 1)
+
+char buff[2][BUFF_SIZE];
+int curBuffInd = 0;		// Index of current buffer (0, 1)
+int nextBuffReady = 0;	// Is next buffer ready
+int curBuffPtr = 0;		// Current sample pointer
+
+FIL file;				// Current file
+
+void open_file(char *fileName)
 {
-	SystemInit();
-	while (!RCC_WaitForHSEStartUp());
-
-	// init dac
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
-	codec_init();
-	codec_ctrl_init();
-	I2S_Cmd(CODEC_I2S, ENABLE);
-	// init dac
-
-    display_init();
-    display_write_string("Hola! ");
-
-    // fat
     FATFS FATFS_Obj;
     FRESULT result;
 
@@ -116,45 +103,97 @@ int main(void)
     	display_write_string("Mount error. ");
     }
 
-    result = f_open(&file, "a.wav", FA_OPEN_EXISTING | FA_READ);
+    result = f_open(&file, "n2.wav", FA_OPEN_EXISTING | FA_READ);
 
     if (result == FR_OK) {
     	display_write_string("File opened. ");
     } else {
     	display_write_string("Open error. ");
 	}
-    // fat
+}
 
-    display_write_string("Begin! ");
-
-    while (1)
+void TIM2_IRQHandler(void)
+{
+    if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
     {
-		if (ptr >= BUFF_SIZE)
-		{
-			f_read(&file, &buff, BUFF_SIZE, &nRead);
-			ptr = 0;
-		}
-		else
-		{
-			SPI_I2S_SendData(SPI3, buff[ptr]);
-			while(!SPI_I2S_GetFlagStatus(SPI3, SPI_I2S_FLAG_TXE));
-			SPI_I2S_SendData(SPI3, buff[ptr]);
-			while(!SPI_I2S_GetFlagStatus(SPI3, SPI_I2S_FLAG_TXE));
-			ptr++;
-		}
+        TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+
+        if (curBuffPtr >= BUFF_SIZE)
+        {
+        	curBuffPtr = 0;
+        	curBuffInd = !curBuffInd;
+        	nextBuffReady = 0;
+        }
+
+        current_data[0] = buff[curBuffInd][curBuffPtr++];	// Left data
+        current_data[1] = buff[curBuffInd][curBuffPtr++];	// Right data
+    }
+}
+
+void SPI3_IRQHandler(void)
+{
+    if (SPI_I2S_GetITStatus(SPI3, SPI_I2S_IT_TXE) != RESET)
+    {
+        SPI_I2S_ClearITPendingBit(SPI3, SPI_I2S_IT_TXE);
+
+        SPI_I2S_SendData(SPI3, current_data[current_side]);
+        current_side = !current_side;
+    }
+}
+
+void readerTask(void *pvParameters)
+{
+
+    while(1) {
+    	if (!nextBuffReady)
+    	{
+    		UINT nRead;
+			f_read(&file, &buff[!curBuffInd], BUFF_SIZE, &nRead);
+			nextBuffReady = 1;
+    	}
     }
 
-//    int i = 1000000;
-//    while (i--)
-//    {
-//		SPI_I2S_SendData(SPI3, 0);
-//		while(!SPI_I2S_GetFlagStatus(SPI3, SPI_I2S_FLAG_TXE));
-//    }
+    vTaskDelete(NULL);
+}
 
-    display_write_string("End. ");
+int main(void)
+{
+	SystemInit();
 
-//    init_tim();
+	display_init();
+    display_write_string("Loading! ");
 
+	codec_init();
+	codec_ctrl_init();
+
+    timer_init();
+    i2s_it_init();
+
+//    open_file("n.wav");
+//    // fat
+    FATFS FATFS_Obj;
+    FRESULT result;
+
+    result = f_mount(&FATFS_Obj, "0", 1);
+
+    if (result == FR_OK) {
+    	display_write_string("Fs mounted. ");
+    } else {
+    	display_write_string("Mount error. ");
+    }
+
+    result = f_open(&file, "n2.wav", FA_OPEN_EXISTING | FA_READ);
+
+    if (result == FR_OK) {
+    	display_write_string("File opened. ");
+    } else {
+    	display_write_string("Open error. ");
+	}
+//    // fat
+
+    xTaskCreate(readerTask, "task1", configMINIMAL_STACK_SIZE + 100, NULL, tskIDLE_PRIORITY + 2, NULL);
+//    vTaskStartScheduler();
+    readerTask(NULL);
     while(1) {}
 }
 

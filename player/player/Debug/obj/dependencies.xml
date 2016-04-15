@@ -5,7 +5,7 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\dac\codec.h" lastModified="1541963d4a4">
+      <source file="..\..\..\dac\codec.h" lastModified="1541b81815e">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -15,9 +15,9 @@
       <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15406b68464">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\freertos\FreeRTOSConfig.h" lastModified="1540668b1af">
+      <source file="..\..\..\freertos\FreeRTOSConfig.h" lastModified="1541b768c9d">
       </source>
-      <source file="..\..\..\dac\codec.c" lastModified="154199a7ff4">
+      <source file="..\..\..\dac\codec.c" lastModified="1541b7fd79b">
          <include file="..\..\..\dac\codec.h"/>
       </source>
       <source file="..\..\..\fatfs\ffconf.h" lastModified="153a788fe68">
@@ -69,11 +69,11 @@
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\list.h"/>
       </source>
+      <source file="..\..\..\display\display.h" lastModified="154198b89e4">
+      </source>
       <source file="..\..\..\freertos\port.c" lastModified="1540562d2b6">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\task.h"/>
-      </source>
-      <source file="..\..\..\display\display.h" lastModified="154198b89e4">
       </source>
       <source file="..\..\..\freertos\timers.c" lastModified="1540562d15f">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
@@ -121,6 +121,24 @@
       </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="154051e7d5c">
       </source>
+      <source file="..\..\..\main.c" lastModified="1541baaaec7">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+         <include file="..\..\..\freertos\FreeRTOSConfig.h"/>
+         <include file="..\..\..\freertos\FreeRTOS.h"/>
+         <include file="..\..\..\freertos\portmacro.h"/>
+         <include file="..\..\..\freertos\croutine.h"/>
+         <include file="..\..\..\freertos\task.h"/>
+         <include file="..\..\..\freertos\queue.h"/>
+         <include file="..\..\..\display\display.h"/>
+         <include file="..\..\..\fatfs\ff.h"/>
+         <include file="..\..\..\dac\codec.h"/>
+      </source>
       <source file="..\..\..\freertos\portable.h" lastModified="1540562cde4">
          <include file="..\..\..\freertos\deprecated_definitions.h"/>
          <include file="..\..\..\freertos\portmacro.h"/>
@@ -136,12 +154,12 @@
       <source file="..\..\..\freertos\task.h" lastModified="1540562ce42">
          <include file="..\..\..\freertos\list.h"/>
       </source>
+      <source file="..\..\..\freertos\queue.h" lastModified="1540562cdf4">
+      </source>
       <source file="..\..\..\freertos\croutine.c" lastModified="1540562cd0a">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\task.h"/>
          <include file="..\..\..\freertos\croutine.h"/>
-      </source>
-      <source file="..\..\..\freertos\queue.h" lastModified="1540562cdf4">
       </source>
       <source file="..\..\..\freertos\queue.c" lastModified="1540562d518">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
@@ -200,83 +218,6 @@
          <include file="..\..\..\freertos\task.h"/>
          <include file="..\..\..\freertos\timers.h"/>
          <include file="..\..\..\freertos\event_groups.h"/>
-      </source>
-   </includePath>
-   <includePath signature="/I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_lib /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\fatfs /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\dac /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_boot /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\display /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_lib\include /I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player">
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="154051e754e">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\dac\codec.h" lastModified="1541963d4a4">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15406b68464">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\fatfs\ffconf.h" lastModified="153a788fe68">
-      </source>
-      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15406b68464">
-         <include file="..\..\..\cmsis_lib\include\misc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="154051e758c">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="154051e758c">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\fatfs\diskio.h" lastModified="153a788fddb">
-         <include file="..\..\..\fatfs\integer.h"/>
-      </source>
-      <source file="..\..\..\display\display.h" lastModified="154198b89e4">
-      </source>
-      <source file="..\..\..\display\display.c" lastModified="1541992d43c">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
-         <include file="..\..\..\display\display.h"/>
-         <include file="..\..\..\display\fonts.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="154051e754e">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="1540a92c4a7">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="1540a92f6f4">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h" lastModified="1540a92c4a6">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h" lastModified="1540a92f6f4">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\fatfs\ff.h" lastModified="153a788fe48">
-         <include file="..\..\..\fatfs\integer.h"/>
-         <include file="..\..\..\fatfs\ffconf.h"/>
-      </source>
-      <source file="..\..\..\display\fonts.h" lastModified="153806f37c1">
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="154051e757d">
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15406aacaba">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="154051e756d">
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="15406aacaba">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15419604098">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
    </includePath>
 </dependencies>
