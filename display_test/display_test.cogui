@@ -12,17 +12,18 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="fatfs_diskio_sdcard_spi.c" partName="fatfs_diskio_sdcard_spi.c" path="C:/Users/Alexander/Documents/audioplayer_project/display_test/app/fatfs/fatfs_diskio_sdcard_spi.c" title="fatfs_diskio_sdcard_spi.c" tooltip="C:/Users/Alexander/Documents/audioplayer_project/display_test/app/fatfs/fatfs_diskio_sdcard_spi.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/display_test/fatfs/fatfs_diskio_sdcard_spi.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6431" selectionTopPixel="3060"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5901" selectionTopPixel="3060"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Alexander/Documents/audioplayer_project/display_test/app/main.c" title="main.c" tooltip="C:/Users/Alexander/Documents/audioplayer_project/display_test/app/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Alexander/Documents/audioplayer_project/display_test/app/main.c" title="main.c" tooltip="C:/Users/Alexander/Documents/audioplayer_project/display_test/app/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/display_test/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="543" selectionTopPixel="180"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="256" selectionTopPixel="180"/>
 </editor>
 </editors>
 <views>
@@ -52,8 +53,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Warnings (1 item)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -70,7 +69,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.view.CefBrowserEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.welcome.ui.actionSet"/>
@@ -81,8 +80,6 @@
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
-<alwaysOnActionSet id="org.coocox.userspace.actionSet"/>
-<alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryAction"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.refactoring.menu"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.ShowDisassemblyAction"/>
@@ -94,8 +91,8 @@
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryBrowserAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
-<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
+<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
@@ -239,208 +236,35 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/fatfs_diskio_sdcard_spi.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/integer.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/ff.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/ff.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/diskio.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/ffconf.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/fatfs_diskio_sdcard_spi.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/components/STM32F10x_MD_STDLIB/stm32f10x_gpio.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/display_test/components/STM32F10x_MD_STDLIB/startup_stm32f10x_md.s"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/font.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/display/display.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/display/display.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/ff.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/ff.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/ffconf.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/fatfs/integer.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/display_test/main.c"/>
-</editors>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="7760" y="8"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="21427" y="8"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="15151" y="1133"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="8395" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="21106" y="3"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="21024" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="11914" y="59"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="18515" y="260"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="21506" y="3"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="16664" y="918"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="10245" y="26"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="9965" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="9429" y="22"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="9392" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="7932" y="0"/>
-</item>
-<item historyLabel="integer.h" index="1">
-<position info="not_deleted" x="694" y="0"/>
-</item>
-<item historyLabel="ffconf.h" index="6">
-<position info="not_deleted" x="8063" y="0"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="734" y="0"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="1770" y="0"/>
-</item>
-<item historyLabel="ff.h" index="3">
-<position info="not_deleted" x="994" y="0"/>
-</item>
-<item historyLabel="ff.c" index="2">
-<position info="not_deleted" x="153558" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="0">
-<position info="not_deleted" x="7932" y="0"/>
-</item>
-<item historyLabel="diskio.h" index="4">
-<position info="not_deleted" x="421" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="1460" y="0"/>
-</item>
-<item historyLabel="diskio.h" index="4">
-<position info="not_deleted" x="454" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="4058" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="3228" y="17"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="8796" y="0"/>
-</item>
-<item historyLabel="diskio.h" index="4">
-<position info="not_deleted" x="454" y="0"/>
-</item>
-<item historyLabel="main.c" index="8">
-<position info="not_deleted" x="1770" y="0"/>
-</item>
-<item historyLabel="stm32f10x_gpio.h" index="9">
-<position info="not_deleted" x="4180" y="8"/>
-</item>
-<item historyLabel="startup_stm32f10x_md.s" index="10">
-<position info="not_deleted" x="2633" y="0"/>
-</item>
-<item historyLabel="font.h" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="display.c" index="12">
-<position info="not_deleted" x="876" y="0"/>
-</item>
-<item historyLabel="display.h" index="13">
-<position info="not_deleted" x="326" y="0"/>
-</item>
-<item historyLabel="ff.h" index="14">
-<position info="not_deleted" x="994" y="0"/>
-</item>
-<item historyLabel="ff.c" index="15">
-<position info="not_deleted" x="153558" y="0"/>
-</item>
-<item historyLabel="ffconf.h" index="16">
-<position info="not_deleted" x="8063" y="0"/>
-</item>
-<item historyLabel="integer.h" index="17">
-<position info="not_deleted" x="694" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="21479" y="0"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="3228" y="17"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="7782" y="30"/>
-</item>
-<item historyLabel="fatfs_diskio_sdcard_spi.c" index="7">
-<position info="not_deleted" x="6431" y="0"/>
-</item>
-<item active="true" historyLabel="main.c" index="18">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="display_test/main.c">
-<persistable path="/display_test/main.c"/>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.c" tooltip="display_test/display/display.c">
+<persistable path="/display_test/display/display.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="integer.h" tooltip="display_test/fatfs/integer.h">
+<persistable path="/display_test/fatfs/integer.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fatfs_diskio_sdcard_spi.c" tooltip="display_test/fatfs/fatfs_diskio_sdcard_spi.c">
 <persistable path="/display_test/fatfs/fatfs_diskio_sdcard_spi.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="diskio.h" tooltip="sd-test/FatFs/diskio.h">
-<persistable path="/sd-test/FatFs/diskio.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="diskio.c" tooltip="display_test/fatfs/diskio.c">
+<persistable path="/display_test/fatfs/diskio.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fatfs_diskio_sdcard_spi.c" tooltip="sd-test/FatFs/fatfs_diskio_sdcard_spi.c">
-<persistable path="/sd-test/FatFs/fatfs_diskio_sdcard_spi.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="diskio.h" tooltip="display_test/fatfs/diskio.h">
+<persistable path="/display_test/fatfs/diskio.h"/>
 </file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="sd-test.coproj" tooltip="C:\Users\Alexander\Desktop\sd-test\sd-test.coproj">
-<persistable uri="file:/C:/Users/Alexander/Desktop/sd-test/sd-test.coproj"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="sd-test/main.c">
-<persistable path="/sd-test/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="ccukDhbZ.s" tooltip="C:\Users\ALEXAN~1\AppData\Local\Temp\ccukDhbZ.s">
-<persistable uri="file:/C:/Users/ALEXAN~1/AppData/Local/Temp/ccukDhbZ.s"/>
-</file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="sd-test.coproj" tooltip="C:\Users\Alexander\Downloads\sd-test\sd-test\sd-test.coproj">
-<persistable uri="file:/C:/Users/Alexander/Downloads/sd-test/sd-test/sd-test.coproj"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ffconf.h" tooltip="display_test/fatfs/ffconf.h">
+<persistable path="/display_test/fatfs/ffconf.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ff.c" tooltip="display_test/fatfs/ff.c">
 <persistable path="/display_test/fatfs/ff.c"/>
@@ -451,9 +275,6 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.h" tooltip="display_test/display/display.h">
 <persistable path="/display_test/display/display.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.c" tooltip="display_test/display/display.c">
-<persistable path="/display_test/display/display.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="f4test/cmsis/system_stm32f4xx.c">
 <persistable path="/f4test/cmsis/system_stm32f4xx.c"/>
 </file>
@@ -462,6 +283,9 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_dbgmcu.c" tooltip="f4test/spl/src/stm32f4xx_dbgmcu.c">
 <persistable path="/f4test/spl/src/stm32f4xx_dbgmcu.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="f4test/cmsis/stm32f4xx.h">
+<persistable path="/f4test/cmsis/stm32f4xx.h"/>
 </file>
 </mruList>
 </workbench>

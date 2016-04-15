@@ -173,7 +173,7 @@
   * @{
   */
 
-  uint32_t SystemCoreClock = 336000000 / 2;
+  uint32_t SystemCoreClock = 360000000 / 2;
 
   __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
 
