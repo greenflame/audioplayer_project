@@ -65,7 +65,7 @@ void codec_init()
 
 	// configure I2S port
 	SPI_I2S_DeInit(CODEC_I2S);
-	I2S_InitType.I2S_AudioFreq = I2S_AudioFreq_44k;
+	I2S_InitType.I2S_AudioFreq = I2S_AudioFreq_48k;
 	I2S_InitType.I2S_MCLKOutput = I2S_MCLKOutput_Enable;
 	I2S_InitType.I2S_DataFormat = I2S_DataFormat_16b;
 	I2S_InitType.I2S_Mode = I2S_Mode_MasterTx;

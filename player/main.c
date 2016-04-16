@@ -70,7 +70,7 @@ void i2s_it_init()
     NVIC_InitTypeDef   NVIC_InitStructure;
 
     NVIC_InitStructure.NVIC_IRQChannel = SPI3_IRQn;
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 5;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
@@ -88,11 +88,12 @@ int curBuffInd = 0;		// Index of current buffer (0, 1)
 int nextBuffReady = 0;	// Is next buffer ready
 int curBuffPtr = 0;		// Current sample pointer
 
+FATFS FATFS_Obj;
 FIL file;				// Current file
+TaskHandle_t readerTask_handler;
 
-void open_file(char *fileName)
+void open_file(char *file_name)
 {
-    FATFS FATFS_Obj;
     FRESULT result;
 
     result = f_mount(&FATFS_Obj, "0", 1);
@@ -103,13 +104,30 @@ void open_file(char *fileName)
     	display_write_string("Mount error. ");
     }
 
-    result = f_open(&file, "n2.wav", FA_OPEN_EXISTING | FA_READ);
+    result = f_open(&file, file_name, FA_OPEN_EXISTING | FA_READ);
 
     if (result == FR_OK) {
     	display_write_string("File opened. ");
     } else {
     	display_write_string("Open error. ");
 	}
+}
+
+void readerTask(void *pvParameters)
+{
+    timer_init();
+    while(1) {
+    	if (!nextBuffReady)
+    	{
+    		UINT nRead;
+			f_read(&file, &buff[!curBuffInd], BUFF_SIZE, &nRead);
+			nextBuffReady = 1;
+    	} else {
+    		vTaskDelay(1);
+    	}
+    }
+
+    vTaskDelete(NULL);
 }
 
 void TIM2_IRQHandler(void)
@@ -125,8 +143,13 @@ void TIM2_IRQHandler(void)
         	nextBuffReady = 0;
         }
 
-        current_data[0] = buff[curBuffInd][curBuffPtr++];	// Left data
-        current_data[1] = buff[curBuffInd][curBuffPtr++];	// Right data
+        char smallBit = buff[curBuffInd][curBuffPtr++];
+        char bigBit = buff[curBuffInd][curBuffPtr++];
+        current_data[0] = bigBit * 256 + smallBit;	// Left data
+
+        smallBit = buff[curBuffInd][curBuffPtr++];
+        bigBit = buff[curBuffInd][curBuffPtr++];
+        current_data[1] = bigBit * 256 + smallBit;	// Right data
     }
 }
 
@@ -141,19 +164,14 @@ void SPI3_IRQHandler(void)
     }
 }
 
-void readerTask(void *pvParameters)
+void set_vol()
 {
+	unsigned char commandBuff[2];
 
-    while(1) {
-    	if (!nextBuffReady)
-    	{
-    		UINT nRead;
-			f_read(&file, &buff[!curBuffInd], BUFF_SIZE, &nRead);
-			nextBuffReady = 1;
-    	}
-    }
+	commandBuff[0] = CODEC_MAP_MASTER_A_VOL;
+	commandBuff[1] = 0b10100000;
 
-    vTaskDelete(NULL);
+	send_codec_ctrl(commandBuff, 2);
 }
 
 int main(void)
@@ -166,34 +184,15 @@ int main(void)
 	codec_init();
 	codec_ctrl_init();
 
-    timer_init();
     i2s_it_init();
 
-//    open_file("n.wav");
-//    // fat
-    FATFS FATFS_Obj;
-    FRESULT result;
+    open_file("bst_s_16.wav");
 
-    result = f_mount(&FATFS_Obj, "0", 1);
+    set_vol();
 
-    if (result == FR_OK) {
-    	display_write_string("Fs mounted. ");
-    } else {
-    	display_write_string("Mount error. ");
-    }
+    xTaskCreate(readerTask, "readerTask", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, &readerTask_handler);
+    vTaskStartScheduler();
 
-    result = f_open(&file, "n2.wav", FA_OPEN_EXISTING | FA_READ);
-
-    if (result == FR_OK) {
-    	display_write_string("File opened. ");
-    } else {
-    	display_write_string("Open error. ");
-	}
-//    // fat
-
-    xTaskCreate(readerTask, "task1", configMINIMAL_STACK_SIZE + 100, NULL, tskIDLE_PRIORITY + 2, NULL);
-//    vTaskStartScheduler();
-    readerTask(NULL);
     while(1) {}
 }
 
