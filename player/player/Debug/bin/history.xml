@@ -1,28 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -g -nostartfiles -Map=player.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\player -TC:\CooCox\CoIDE\configuration\ProgramData\player/arm-gcc-link.ld -g">
-      <target file="player.elf" lastModified="15420bf4cda">
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="15420bf3fdf"/>
-         <source file="..\obj\main.o" lastModified="15420bf406c"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15420bf4117"/>
-         <source file="..\obj\codec.o" lastModified="15420bf4175"/>
-         <source file="..\obj\timers.o" lastModified="15420bf4211"/>
-         <source file="..\obj\display.o" lastModified="15420bf426e"/>
-         <source file="..\obj\tasks.o" lastModified="15420bf4368"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15420bf43e5"/>
-         <source file="..\obj\list.o" lastModified="15420bf4423"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="15420bf4481"/>
-         <source file="..\obj\queue.o" lastModified="15420bf451d"/>
-         <source file="..\obj\port.o" lastModified="15420bf456b"/>
-         <source file="..\obj\ff.o" lastModified="15420bf4674"/>
-         <source file="..\obj\croutine.o" lastModified="15420bf46a3"/>
-         <source file="..\obj\stm32f4xx_spi.o" lastModified="15420bf4720"/>
-         <source file="..\obj\event_groups.o" lastModified="15420bf478d"/>
-         <source file="..\obj\stm32f4xx_i2c.o" lastModified="15420bf4819"/>
-         <source file="..\obj\misc.o" lastModified="15420bf4867"/>
-         <source file="..\obj\heap_2.o" lastModified="15420bf48b5"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="15420bf49af"/>
-         <source file="..\obj\fatfs_diskio_sdcard_spi.o" lastModified="15420bf4a7a"/>
+      <target file="player.elf" lastModified="15425d54217">
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="15425b9ab3b"/>
+         <source file="..\obj\main.o" lastModified="15425d4ade5"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15425b9b098"/>
+         <source file="..\obj\codec.o" lastModified="15425b9b2f8"/>
+         <source file="..\obj\player.o" lastModified="15425d53f4a"/>
+         <source file="..\obj\timers.o" lastModified="15425bc1281"/>
+         <source file="..\obj\display.o" lastModified="15425b9b440"/>
+         <source file="..\obj\tasks.o" lastModified="15425bc138a"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15425b9b587"/>
+         <source file="..\obj\list.o" lastModified="15425bc13d8"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="15425b9b623"/>
+         <source file="..\obj\queue.o" lastModified="15425bc1474"/>
+         <source file="..\obj\port.o" lastModified="15425bc14c2"/>
+         <source file="..\obj\ff.o" lastModified="15425b9b826"/>
+         <source file="..\obj\croutine.o" lastModified="15425bc14f1"/>
+         <source file="..\obj\stm32f4xx_spi.o" lastModified="15425b9b8d2"/>
+         <source file="..\obj\event_groups.o" lastModified="15425bc155e"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="15425b9bb03"/>
+         <source file="..\obj\misc.o" lastModified="15425b9bb61"/>
+         <source file="..\obj\heap_2.o" lastModified="15425bc159d"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="15425b9bd35"/>
+         <source file="..\obj\fatfs_diskio_sdcard_spi.o" lastModified="15425b9be7d"/>
       </target>
    </processor>
 </history>

@@ -73,7 +73,7 @@ void codec_init()
 	I2S_InitType.I2S_CPOL = I2S_CPOL_Low;
 
 	I2S_Init(CODEC_I2S, &I2S_InitType);
-	I2S_Cmd(CODEC_I2S, ENABLE);
+//	I2S_Cmd(CODEC_I2S, ENABLE);
 
 
 	// configure I2C port

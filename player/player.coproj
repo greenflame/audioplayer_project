@@ -88,6 +88,7 @@
     <File name="cmsis_boot" path="" type="2"/>
     <File name="freertos/deprecated_definitions.h" path="freertos/deprecated_definitions.h" type="1"/>
     <File name="freertos/croutine.h" path="freertos/croutine.h" type="1"/>
+    <File name="player.c" path="freertos/player.c" type="1"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
     <File name="fatfs" path="" type="2"/>
@@ -123,6 +124,7 @@
     <File name="freertos/timers.h" path="freertos/timers.h" type="1"/>
     <File name="freertos/tasks.c" path="freertos/tasks.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="player.h" path="freertos/player.h" type="1"/>
     <File name="display/display.h" path="display/display.h" type="1"/>
     <File name="fatfs/ff.h" path="fatfs/ff.h" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
