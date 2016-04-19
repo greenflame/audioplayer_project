@@ -4,6 +4,8 @@
 #include "stm32f4xx_tim.h"
 #include "stm32f4xx_i2c.h"
 #include "stm32f4xx_spi.h"
+#include "stm32f4xx_exti.h"
+#include "stm32f4xx_syscfg.h"
 #include "misc.h"
 
 #include "FreeRTOSConfig.h"
@@ -17,6 +19,8 @@
 #include "ff.h"
 #include "codec.h"
 #include "player.h"
+#include "ui.h"
+#include "controller.h"
 
 #define LED_1 GPIO_Pin_12
 #define LED_2 GPIO_Pin_13
@@ -43,30 +47,20 @@ void leds_init()
     GPIO_Init(GPIOD, &GPIO_InitDef);
 }
 
-void set_vol()
-{
-	unsigned char commandBuff[2];
-
-	commandBuff[0] = CODEC_MAP_MASTER_A_VOL;
-	commandBuff[1] = 0b10100000;
-
-	send_codec_ctrl(commandBuff, 2);
-}
-
 void test_task()
 {
-	vTaskDelay(1000 / portTICK_PERIOD_MS);
-    player_play("onl_s_16.wav");
-	vTaskDelay(5000 / portTICK_PERIOD_MS);
+//	vTaskDelay(1000 / portTICK_PERIOD_MS);
+//    player_play("onl_s_16.wav");
+//	vTaskDelay(5000 / portTICK_PERIOD_MS);
     player_play("bst_s_16.wav");
-	vTaskDelay(5000 / portTICK_PERIOD_MS);
-    player_pause();
-	vTaskDelay(5000 / portTICK_PERIOD_MS);
-    player_resume();
-	vTaskDelay(5000 / portTICK_PERIOD_MS);
-    player_stop();
-	vTaskDelay(5000 / portTICK_PERIOD_MS);
-    player_play("try_s_16.wav");
+//	vTaskDelay(5000 / portTICK_PERIOD_MS);
+//    player_pause();
+//	vTaskDelay(5000 / portTICK_PERIOD_MS);
+//    player_resume();
+//	vTaskDelay(5000 / portTICK_PERIOD_MS);
+//    player_stop();
+//	vTaskDelay(5000 / portTICK_PERIOD_MS);
+//    player_play("try_s_16.wav");
 
     vTaskDelete(NULL);
 }
@@ -77,11 +71,11 @@ void init_fs()	//todo
 {
 	FRESULT result = f_mount(&FATFS_Obj, "0", 1);
 
-    if (result == FR_OK) {
-    	display_write_string("Fs mounted. ");
-    } else {
-    	display_write_string("Mount error. ");
-    }
+//    if (result == FR_OK) {
+//    	display_write_string("Fs mounted. ");
+//    } else {
+//    	display_write_string("Mount error. ");
+//    }
 }
 
 int main(void)
@@ -89,20 +83,20 @@ int main(void)
 	SystemInit();
 
 	display_init();
-    display_write_string("Hola! ");
+//    display_write_string("Hola! ");
 
     init_fs();
 
-
     player_init();
+    ui_init();
+    controller_init();
 
-    set_vol();
+    xTaskCreate(player_task, "player_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL);
+    xTaskCreate(controller_task, "ctrl_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(ui_task, "ui_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
-//    player_play("bst_s_16.wav");
+//    xTaskCreate(test_task, "test_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
-
-    xTaskCreate(player_task, "player_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
-    xTaskCreate(test_task, "test_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
     vTaskStartScheduler();
 
     while(1) {}

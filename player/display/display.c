@@ -131,7 +131,35 @@ void display_write_string(char *s)
 	}
 }
 
+void display_write_char_inverted(char c)
+{
+	int i;
+	for(i = 0; i < 6; i++)
+	{
+		display_write_byte(~font_6x8[c - ' '][i], 1);
+	}
+}
+
+void display_write_string_inverted(char *s)
+{
+  	while(*s)
+	{
+		display_write_char_inverted(*(s++));
+	}
+}
+
 void display_write_int(int i)
 {
-	//todo
+	int ptr = 1;
+	while (ptr * 10 < i)
+	{
+		ptr *= 10;
+	}
+
+	while (ptr != 0)
+	{
+		display_write_char('0' + i / ptr);
+		i = i % ptr;
+		ptr /= 10;
+	}
 }

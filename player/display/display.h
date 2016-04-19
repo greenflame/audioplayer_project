@@ -13,4 +13,7 @@ void display_write_char(char c);
 void display_write_string(char *c);
 void display_write_int(int i);
 
+void display_write_char_inverted(char c);
+void display_write_string_inverted(char *s);
+
 #endif

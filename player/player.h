@@ -19,7 +19,11 @@ void player_pause();
 void player_resume();
 void player_stop();
 
-//void player_volume_inc();	//todo
+void player_volume_add();
+void player_volume_sub();
+
+int player_volume_get();
+int player_volume_set(int vol);	// 52 - 255
 
 
 #endif

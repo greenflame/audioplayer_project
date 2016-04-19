@@ -26,6 +26,11 @@ int				buff_ptr = 0;			// Current sample pointer
 int 			cur_data[2];			// Left, right
 int 			cur_side_ind = 0;		// Index of current ear (0, 1)
 
+int				volume = 160;
+const int		vol_step = 1;
+const int		vol_low_bound = 52;
+const int		vol_up_bound = 255;
+
 player_status_t player_status = READY;	// Player status
 FIL file;								// Current file
 
@@ -72,6 +77,8 @@ void player_init()
 
 	player_timer_init();
 	player_i2s_it_init();
+
+	player_volume_set(volume);
 }
 
 void player_task()	//todo ...
@@ -110,7 +117,40 @@ void player_enable_periphery()
 void player_disable_periphery()
 {
 	TIM_Cmd(TIM2, DISABLE);
-//	I2S_Cmd(SPI3, DISABLE);	//todo
+//	I2S_Cmd(SPI3, DISABLE);		//todo
+}
+
+void player_volume_add()
+{
+	volume += vol_step;
+	player_volume_set(volume);
+}
+
+void player_volume_sub()
+{
+	volume -= vol_step;
+	player_volume_set(volume);
+}
+
+int player_volume_get()
+{
+	return volume;
+}
+
+int player_volume_set(int vol)
+{
+	if (vol > vol_up_bound || vol < vol_low_bound)
+	{
+		return 0;	// Wrong value
+	}
+
+	unsigned char commandBuff[2];
+
+	commandBuff[0] = CODEC_MAP_MASTER_A_VOL;
+	commandBuff[1] = vol;
+	send_codec_ctrl(commandBuff, 2);
+
+	return 1;
 }
 
 

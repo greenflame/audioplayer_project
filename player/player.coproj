@@ -75,24 +75,28 @@
     <Component id="500" name="CMSIS BOOT" path="" type="2"/>
     <Component id="501" name="RCC" path="" type="2"/>
     <Component id="504" name="GPIO" path="" type="2"/>
+    <Component id="505" name="EXTI" path="" type="2"/>
     <Component id="509" name="SPI" path="" type="2"/>
     <Component id="510" name="I2C" path="" type="2"/>
     <Component id="513" name="TIM" path="" type="2"/>
     <Component id="524" name="MISC" path="" type="2"/>
+    <Component id="526" name="SYSCFG" path="" type="2"/>
   </Components>
   <Files>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
+    <File name="controller.h" path="controller.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_i2c.h" path="cmsis_lib/include/stm32f4xx_i2c.h" type="1"/>
     <File name="fatfs/diskio.h" path="fatfs/diskio.h" type="1"/>
     <File name="fatfs/integer.h" path="fatfs/integer.h" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
+    <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
     <File name="freertos/deprecated_definitions.h" path="freertos/deprecated_definitions.h" type="1"/>
     <File name="freertos/croutine.h" path="freertos/croutine.h" type="1"/>
-    <File name="player.c" path="freertos/player.c" type="1"/>
+    <File name="player.c" path="player.c" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
     <File name="fatfs" path="" type="2"/>
-    <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="freertos/port.c" path="freertos/port.c" type="1"/>
@@ -116,17 +120,21 @@
     <File name="dac/codec.c" path="dac/codec.c" type="1"/>
     <File name="dac" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_syscfg.c" path="cmsis_lib/source/stm32f4xx_syscfg.c" type="1"/>
     <File name="freertos/portmacro.h" path="freertos/portmacro.h" type="1"/>
     <File name="freertos/event_groups.h" path="freertos/event_groups.h" type="1"/>
+    <File name="ui.h" path="ui.h" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
     <File name="freertos/queue.h" path="freertos/queue.h" type="1"/>
     <File name="freertos/timers.h" path="freertos/timers.h" type="1"/>
     <File name="freertos/tasks.c" path="freertos/tasks.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
-    <File name="player.h" path="freertos/player.h" type="1"/>
+    <File name="player.h" path="player.h" type="1"/>
     <File name="display/display.h" path="display/display.h" type="1"/>
     <File name="fatfs/ff.h" path="fatfs/ff.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_spi.h" path="cmsis_lib/include/stm32f4xx_spi.h" type="1"/>
     <File name="display" path="" type="2"/>
@@ -138,8 +146,10 @@
     <File name="freertos/semphr.h" path="freertos/semphr.h" type="1"/>
     <File name="freertos" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
+    <File name="ui.c" path="ui.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="freertos/StackMacros.h" path="freertos/StackMacros.h" type="1"/>
+    <File name="controller.c" path="controller.c" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
     <File name="fatfs/ffconf.h" path="fatfs/ffconf.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>
