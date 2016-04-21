@@ -148,6 +148,33 @@ void display_write_string_inverted(char *s)
 	}
 }
 
+void display_write_control_char(int c, int is_selected)
+{
+	int length;
+
+	if (c != CHAR_VOL_LOW && c != CHAR_VOL_HIGH)
+	{
+		length = 2;
+	}
+	else
+	{
+		length = 1;
+	}
+
+	int i;
+	for (i = 0; i < length; i++)
+	{
+		if (is_selected)
+		{
+			display_write_char_inverted(c + CHAR_SELECT_INTERVAL + i);
+		}
+		else
+		{
+			display_write_char(c + i);
+		}
+	}
+}
+
 void display_write_int(int i)
 {
 	int ptr = 1;

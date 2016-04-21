@@ -69,7 +69,7 @@ FATFS FATFS_Obj;
 
 void init_fs()	//todo
 {
-	FRESULT result = f_mount(&FATFS_Obj, "0", 1);
+	/*FRESULT result = */f_mount(&FATFS_Obj, "0", 1);
 
 //    if (result == FR_OK) {
 //    	display_write_string("Fs mounted. ");
@@ -82,14 +82,13 @@ int main(void)
 {
 	SystemInit();
 
-	display_init();
-//    display_write_string("Hola! ");
-
     init_fs();
+    display_init();
 
+    controller_init();
     player_init();
     ui_init();
-    controller_init();
+
 
     xTaskCreate(player_task, "player_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL);
     xTaskCreate(controller_task, "ctrl_task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);

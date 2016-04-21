@@ -1,83 +1,83 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc 4.9.3 mingw32 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -D__FPU_USED -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_lib -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\fatfs -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\dac -I..\..\..\..\..\Users\Alexander\Documents -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_boot -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\display -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\freertos -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player\cmsis_lib\include -I..\..\..\..\..\Users\Alexander\Documents\audioplayer_project\player">
-      <target file="stm32f4xx_exti.o" lastModified="15430515f2f">
+      <target file="stm32f4xx_exti.o" lastModified="15438d27cc1">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="15429bb7f50"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="15430515a30">
+      <target file="stm32f4xx_gpio.o" lastModified="15438d26f5d">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="154051e754e"/>
       </target>
-      <target file="tasks.o" lastModified="154305159c3">
+      <target file="controller.o" lastModified="15438d28105">
+         <source file="..\..\..\controller.c" lastModified="15437e4a08c"/>
+      </target>
+      <target file="tasks.o" lastModified="15438d26e52">
          <source file="..\..\..\freertos\tasks.c" lastModified="1540562cd68"/>
       </target>
-      <target file="controller.o" lastModified="15430575401">
-         <source file="..\..\..\controller.c" lastModified="15430573847"/>
+      <target file="display.o" lastModified="15438d26c8e">
+         <source file="..\..\..\display\display.c" lastModified="15437904b9c"/>
       </target>
-      <target file="display.o" lastModified="154305158ba">
-         <source file="..\..\..\display\display.c" lastModified="1542ff914a3"/>
-      </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="15430514c5b">
+      <target file="stm32f4xx_syscfg.o" lastModified="15438d25a19">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="15429be204a"/>
       </target>
-      <target file="event_groups.o" lastModified="15430515e16">
+      <target file="event_groups.o" lastModified="15438d27a80">
          <source file="..\..\..\freertos\event_groups.c" lastModified="1540562cd1a"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="15430514db2">
+      <target file="startup_stm32f4xx.o" lastModified="15438d25f76">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="154051e756d"/>
       </target>
-      <target file="croutine.o" lastModified="15430515d3c">
-         <source file="..\..\..\freertos\croutine.c" lastModified="1540562cd0a"/>
-      </target>
-      <target file="stm32f4xx_tim.o" lastModified="15430516289">
+      <target file="stm32f4xx_tim.o" lastModified="15438d284dc">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15406aacaba"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="15430515acc">
+      <target file="croutine.o" lastModified="15438d27793">
+         <source file="..\..\..\freertos\croutine.c" lastModified="1540562cd0a"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="15438d270f3">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15419604098"/>
       </target>
-      <target file="misc.o" lastModified="15430515fac">
+      <target file="misc.o" lastModified="15438d27dca">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15406b68464"/>
       </target>
-      <target file="player.o" lastModified="154305157c0">
+      <target file="player.o" lastModified="15438d26b08">
          <source file="..\..\..\player.c" lastModified="1542d7f7c23"/>
       </target>
-      <target file="heap_2.o" lastModified="1543051600a">
+      <target file="heap_2.o" lastModified="15438d27ee3">
          <source file="..\..\..\freertos\heap_2.c" lastModified="1540562deaa"/>
       </target>
-      <target file="stm32f4xx_spi.o" lastModified="15430515db9">
+      <target file="stm32f4xx_spi.o" lastModified="15438d27948">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="1540a92f6f4"/>
       </target>
-      <target file="queue.o" lastModified="15430515b87">
+      <target file="queue.o" lastModified="15438d2722e">
          <source file="..\..\..\freertos\queue.c" lastModified="1540562cd48"/>
       </target>
-      <target file="codec.o" lastModified="15430515457">
+      <target file="codec.o" lastModified="15438d26859">
          <source file="..\..\..\dac\codec.c" lastModified="15425660df5"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="154305150ce">
+      <target file="stm32f4xx_rcc.o" lastModified="15438d26647">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="154051e758c"/>
       </target>
-      <target file="list.o" lastModified="15430515a7e">
+      <target file="list.o" lastModified="15438d27028">
          <source file="..\..\..\freertos\list.c" lastModified="1540562cd29"/>
       </target>
-      <target file="port.o" lastModified="15430515bf4">
+      <target file="port.o" lastModified="15438d2736e">
          <source file="..\..\..\freertos\port.c" lastModified="1540562d2b6"/>
       </target>
-      <target file="timers.o" lastModified="1543051584c">
+      <target file="timers.o" lastModified="15438d26be2">
          <source file="..\..\..\freertos\timers.c" lastModified="1540562cd77"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="15430515ec2">
+      <target file="stm32f4xx_i2c.o" lastModified="15438d27b5a">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="1540a92c4a7"/>
       </target>
-      <target file="ui.o" lastModified="15430575308">
-         <source file="..\..\..\ui.c" lastModified="15430560e1e"/>
+      <target file="ui.o" lastModified="15438d255d4">
+         <source file="..\..\..\ui.c" lastModified="15438cfd36a"/>
       </target>
-      <target file="fatfs_diskio_sdcard_spi.o" lastModified="15430516364">
+      <target file="fatfs_diskio_sdcard_spi.o" lastModified="15438d2877b">
          <source file="..\..\..\fatfs\fatfs_diskio_sdcard_spi.c" lastModified="15416ad21fb"/>
       </target>
-      <target file="ff.o" lastModified="15430515cfe">
+      <target file="ff.o" lastModified="15438d27725">
          <source file="..\..\..\fatfs\ff.c" lastModified="153a788fe29"/>
       </target>
-      <target file="main.o" lastModified="1543057d87b">
-         <source file="..\..\..\main.c" lastModified="1543057ce7d"/>
+      <target file="main.o" lastModified="15438d261e6">
+         <source file="..\..\..\main.c" lastModified="15437f47df6"/>
       </target>
    </processor>
 </history>
