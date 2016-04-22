@@ -151,6 +151,7 @@ void display_write_string_inverted(char *s)
 void display_write_control_char(int c, int is_selected)
 {
 	int length;
+	const int char_select_interval = 10;
 
 	if (c != CHAR_VOL_LOW && c != CHAR_VOL_HIGH)
 	{
@@ -166,7 +167,7 @@ void display_write_control_char(int c, int is_selected)
 	{
 		if (is_selected)
 		{
-			display_write_char_inverted(c + CHAR_SELECT_INTERVAL + i);
+			display_write_char_inverted(c + char_select_interval + i);
 		}
 		else
 		{

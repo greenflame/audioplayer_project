@@ -13,7 +13,7 @@
 
 // Old states
 int		sw_old_state = 1;		// Button, GPIOE PIN0
-int		clk_old_state = 1;		// Rotation, GPIOE PIN3, DT - E2
+int		clk_old_state = 1;		// Rotation, GPIOE PIN0, DT - E2
 
 void controller_init()
 {
@@ -22,7 +22,7 @@ void controller_init()
 	GPIO_InitTypeDef GPIO_InitStruct;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_3 | GPIO_Pin_2;
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOE, &GPIO_InitStruct);
@@ -30,8 +30,8 @@ void controller_init()
 
 void controller_tick()
 {
-	int sw_new_state = GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_4);
-	int clk_new_state = GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_3);
+	int sw_new_state = GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_1);
+	int clk_new_state = GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_0);
 
 	if (clk_old_state && !clk_new_state)	// Rotation
 	{
@@ -44,12 +44,10 @@ void controller_tick()
 		{
 			ui_up_handler();
 		}
-//		vTaskDelay(200 * portTICK_RATE_MS);
 	}
 	else if (sw_old_state && !sw_new_state)	// Button press
 	{
 		ui_press_handler();
-//		vTaskDelay(200 * portTICK_RATE_MS);
 	}
 
 	sw_old_state = sw_new_state;

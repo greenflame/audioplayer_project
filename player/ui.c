@@ -35,7 +35,7 @@ int		is_menu_active = 0;		// Menu / track list active
 int		is_in_vol_ctrl = 0;		// Is user controlling volume
 
 // Volume indicator
-const int	vol_mid = 160;
+const int	vol_mid = 160;		// Default volume value
 const int	vol_ind_step = 5;
 const int	vol_ind_size = 6;
 

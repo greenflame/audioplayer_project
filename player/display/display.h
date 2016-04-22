@@ -8,7 +8,6 @@
 #define CHAR_VOLUME				('z' + 8)
 #define CHAR_VOL_LOW			('z' + 10)
 #define CHAR_VOL_HIGH			('z' + 11)
-#define CHAR_SELECT_INTERVAL	10			// Add this value to make control char selected
 
 #define DISPLAY_WIDTH	84		// In pixels
 #define DISPLAY_HEIGHT	6		// In characters( *8 to convert to pixels)

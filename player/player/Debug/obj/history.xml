@@ -7,11 +7,11 @@
       <target file="stm32f4xx_gpio.o" lastModified="15438d26f5d">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="154051e754e"/>
       </target>
-      <target file="controller.o" lastModified="15438d28105">
-         <source file="..\..\..\controller.c" lastModified="15437e4a08c"/>
-      </target>
       <target file="tasks.o" lastModified="15438d26e52">
          <source file="..\..\..\freertos\tasks.c" lastModified="1540562cd68"/>
+      </target>
+      <target file="controller.o" lastModified="1543f30f5aa">
+         <source file="..\..\..\controller.c" lastModified="1543f30c73b"/>
       </target>
       <target file="display.o" lastModified="15438d26c8e">
          <source file="..\..\..\display\display.c" lastModified="15437904b9c"/>
@@ -25,11 +25,11 @@
       <target file="startup_stm32f4xx.o" lastModified="15438d25f76">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="154051e756d"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="15438d284dc">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15406aacaba"/>
-      </target>
       <target file="croutine.o" lastModified="15438d27793">
          <source file="..\..\..\freertos\croutine.c" lastModified="1540562cd0a"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="15438d284dc">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15406aacaba"/>
       </target>
       <target file="system_stm32f4xx.o" lastModified="15438d270f3">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15419604098"/>
@@ -37,8 +37,8 @@
       <target file="misc.o" lastModified="15438d27dca">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15406b68464"/>
       </target>
-      <target file="player.o" lastModified="15438d26b08">
-         <source file="..\..\..\player.c" lastModified="1542d7f7c23"/>
+      <target file="player.o" lastModified="1543f440962">
+         <source file="..\..\..\player.c" lastModified="1543f3e76c4"/>
       </target>
       <target file="heap_2.o" lastModified="15438d27ee3">
          <source file="..\..\..\freertos\heap_2.c" lastModified="1540562deaa"/>
@@ -49,14 +49,14 @@
       <target file="queue.o" lastModified="15438d2722e">
          <source file="..\..\..\freertos\queue.c" lastModified="1540562cd48"/>
       </target>
-      <target file="codec.o" lastModified="15438d26859">
-         <source file="..\..\..\dac\codec.c" lastModified="15425660df5"/>
-      </target>
-      <target file="stm32f4xx_rcc.o" lastModified="15438d26647">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="154051e758c"/>
+      <target file="codec.o" lastModified="1543f4408d5">
+         <source file="..\..\..\dac\codec.c" lastModified="1543f43ebf3"/>
       </target>
       <target file="list.o" lastModified="15438d27028">
          <source file="..\..\..\freertos\list.c" lastModified="1540562cd29"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="15438d26647">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="154051e758c"/>
       </target>
       <target file="port.o" lastModified="15438d2736e">
          <source file="..\..\..\freertos\port.c" lastModified="1540562d2b6"/>
@@ -76,7 +76,7 @@
       <target file="ff.o" lastModified="15438d27725">
          <source file="..\..\..\fatfs\ff.c" lastModified="153a788fe29"/>
       </target>
-      <target file="main.o" lastModified="15438d261e6">
+      <target file="main.o" lastModified="1543f440878">
          <source file="..\..\..\main.c" lastModified="15437f47df6"/>
       </target>
    </processor>

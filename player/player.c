@@ -148,7 +148,7 @@ int player_volume_set(int vol)
 
 	commandBuff[0] = CODEC_MAP_MASTER_A_VOL;
 	commandBuff[1] = vol;
-	send_codec_ctrl(commandBuff, 2);
+	codec_send_ctrl(commandBuff, 2);
 
 	return 1;
 }
