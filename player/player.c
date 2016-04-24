@@ -17,6 +17,8 @@
 #include "task.h"
 #include "queue.h"
 
+#include <string.h>
+
 
 unsigned char	buff[2][BUFF_SIZE];		// Buffers
 int 			cur_buff_ind = 0;		// Index of current buffer (0, 1)
@@ -81,7 +83,7 @@ void player_init()
 	player_volume_set(volume);
 }
 
-void player_task()	//todo ...
+void player_task()	// Todo ...
 {
 	while(1)
 	{
@@ -117,7 +119,7 @@ void player_enable_periphery()
 void player_disable_periphery()
 {
 	TIM_Cmd(TIM2, DISABLE);
-//	I2S_Cmd(SPI3, DISABLE);		//todo
+//	I2S_Cmd(SPI3, DISABLE);		// Todo
 }
 
 void player_volume_add()
@@ -192,12 +194,20 @@ void SPI3_IRQHandler(void)
 
 // End of interrupts
 
+void clear_buffers()
+{
+	memset(buff[0], 0, BUFF_SIZE);
+	memset(buff[1], 0, BUFF_SIZE);
+}
+
 int player_play(char *file_name)
 {
 	player_stop();
+	clear_buffers();
 
 	// Load file
 	FRESULT result = f_open(&file, file_name, FA_OPEN_EXISTING | FA_READ);
+	f_lseek(&file, 44);		// Skip wav header
 
     if (result != FR_OK)
     {

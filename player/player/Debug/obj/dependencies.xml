@@ -5,7 +5,7 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\ui.c" lastModified="15438cfd752">
+      <source file="..\..\..\ui.c" lastModified="154441fe1ef">
          <include file="..\..\..\ui.h"/>
          <include file="..\..\..\player.h"/>
          <include file="..\..\..\fatfs\ff.h"/>
@@ -35,11 +35,32 @@
       </source>
       <source file="..\..\..\freertos\FreeRTOSConfig.h" lastModified="15425bbb7f6">
       </source>
+      <source file="..\..\..\player.c" lastModified="15449dd9bbd">
+         <include file="..\..\..\player.h"/>
+         <include file="..\..\..\dac\codec.h"/>
+         <include file="..\..\..\fatfs\ff.h"/>
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+         <include file="..\..\..\freertos\FreeRTOSConfig.h"/>
+         <include file="..\..\..\freertos\FreeRTOS.h"/>
+         <include file="..\..\..\freertos\portmacro.h"/>
+         <include file="..\..\..\freertos\croutine.h"/>
+         <include file="..\..\..\freertos\task.h"/>
+         <include file="..\..\..\freertos\queue.h"/>
+      </source>
+      <source file="..\..\..\dac\codec.c" lastModified="1543f4a1478">
+         <include file="..\..\..\dac\codec.h"/>
+      </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="15429be204a">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\fatfs\ffconf.h" lastModified="153a788fe68">
+      <source file="..\..\..\fatfs\ffconf.h" lastModified="1544471851e">
       </source>
       <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15406b68464">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
@@ -64,7 +85,7 @@
       </source>
       <source file="..\..\..\freertos\list.h" lastModified="1540562cdc5">
       </source>
-      <source file="..\..\..\fatfs\fatfs_diskio_sdcard_spi.c" lastModified="15416ad25e3">
+      <source file="..\..\..\fatfs\fatfs_diskio_sdcard_spi.c" lastModified="1543f4f89b9">
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -88,11 +109,11 @@
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\list.h"/>
       </source>
-      <source file="..\..\..\display\display.h" lastModified="154378edf84">
-      </source>
       <source file="..\..\..\freertos\port.c" lastModified="1540562d2b6">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\task.h"/>
+      </source>
+      <source file="..\..\..\display\display.h" lastModified="1543f4de0b1">
       </source>
       <source file="..\..\..\freertos\timers.c" lastModified="1540562d15f">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
@@ -105,7 +126,7 @@
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
       </source>
-      <source file="..\..\..\display\display.c" lastModified="15437904b9c">
+      <source file="..\..\..\display\display.c" lastModified="1543f4ea573">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
@@ -145,29 +166,6 @@
       </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="154051e7d5c">
       </source>
-      <source file="..\..\..\main.c" lastModified="15437f47df6">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_i2c.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
-         <include file="..\..\..\cmsis_lib\include\misc.h"/>
-         <include file="..\..\..\freertos\FreeRTOSConfig.h"/>
-         <include file="..\..\..\freertos\FreeRTOS.h"/>
-         <include file="..\..\..\freertos\portmacro.h"/>
-         <include file="..\..\..\freertos\croutine.h"/>
-         <include file="..\..\..\freertos\task.h"/>
-         <include file="..\..\..\freertos\queue.h"/>
-         <include file="..\..\..\display\display.h"/>
-         <include file="..\..\..\fatfs\ff.h"/>
-         <include file="..\..\..\dac\codec.h"/>
-         <include file="..\..\..\player.h"/>
-         <include file="..\..\..\ui.h"/>
-         <include file="..\..\..\controller.h"/>
-      </source>
       <source file="..\..\..\freertos\portable.h" lastModified="1540562cde4">
          <include file="..\..\..\freertos\deprecated_definitions.h"/>
          <include file="..\..\..\freertos\portmacro.h"/>
@@ -183,12 +181,12 @@
       <source file="..\..\..\freertos\task.h" lastModified="1540562ce42">
          <include file="..\..\..\freertos\list.h"/>
       </source>
-      <source file="..\..\..\freertos\queue.h" lastModified="1540562cdf4">
-      </source>
       <source file="..\..\..\freertos\croutine.c" lastModified="1540562cd0a">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\task.h"/>
          <include file="..\..\..\freertos\croutine.h"/>
+      </source>
+      <source file="..\..\..\freertos\queue.h" lastModified="1540562cdf4">
       </source>
       <source file="..\..\..\freertos\queue.c" lastModified="1540562d518">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
@@ -196,23 +194,23 @@
          <include file="..\..\..\freertos\queue.h"/>
          <include file="..\..\..\freertos\croutine.h"/>
       </source>
-      <source file="..\..\..\fatfs\ff.h" lastModified="153a788fe48">
+      <source file="..\..\..\fatfs\ff.h" lastModified="154441f0945">
          <include file="..\..\..\fatfs\integer.h"/>
          <include file="..\..\..\fatfs\ffconf.h"/>
       </source>
       <source file="..\..\..\freertos\StackMacros.h" lastModified="1540562ce23">
       </source>
-      <source file="..\..\..\fatfs\ff.c" lastModified="153a7890211">
+      <source file="..\..\..\fatfs\ff.c" lastModified="154442124a2">
          <include file="..\..\..\fatfs\ff.h"/>
          <include file="..\..\..\fatfs\diskio.h"/>
+      </source>
+      <source file="..\..\..\controller.h" lastModified="1543036278c">
       </source>
       <source file="..\..\..\freertos\tasks.c" lastModified="1540562dd08">
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\task.h"/>
          <include file="..\..\..\freertos\timers.h"/>
          <include file="..\..\..\freertos\StackMacros.h"/>
-      </source>
-      <source file="..\..\..\controller.h" lastModified="1543036278c">
       </source>
       <source file="..\..\..\cmsis\core_cm4.h" lastModified="154051e7965">
          <include file="..\..\..\cmsis\core_cmInstr.h"/>
@@ -230,12 +228,16 @@
       <source file="..\..\..\freertos\event_groups.h" lastModified="1540562cda6">
          <include file="..\..\..\freertos\timers.h"/>
       </source>
-      <source file="..\..\..\controller.c" lastModified="1543f30c73b">
+      <source file="..\..\..\controller.c" lastModified="15442f00034">
          <include file="..\..\..\controller.h"/>
          <include file="..\..\..\player.h"/>
          <include file="..\..\..\ui.h"/>
+         <include file="..\..\..\display\display.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
          <include file="..\..\..\freertos\FreeRTOSConfig.h"/>
          <include file="..\..\..\freertos\FreeRTOS.h"/>
          <include file="..\..\..\freertos\portmacro.h"/>

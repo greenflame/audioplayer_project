@@ -1,15 +1,20 @@
 #include "controller.h"
 #include "player.h"
 #include "ui.h"
+#include "display.h"
 
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
+#include "stm32f4xx_exti.h"
+#include "stm32f4xx_syscfg.h"
+#include "misc.h"
 
 #include "FreeRTOSConfig.h"
 #include "FreeRTOS.h"
 #include "portmacro.h"
 #include "croutine.h"
 #include "task.h"
+
 
 // Old states
 int		sw_old_state = 1;		// Button, GPIOE PIN0
